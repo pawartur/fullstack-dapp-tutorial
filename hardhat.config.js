@@ -27,3 +27,18 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
     }
   }
 };
+
+module.exports = {
+  defaultNetwork: "hardhat",
+  paths: {
+    artifacts: './src/artifacts',
+  },
+  networks: {
+    hardhat: {},
+    ropsten: {
+      url: "https://ropsten.infura.io/v3/3f4bde656e1e4525955a3a6cfc4ec03c",
+      accounts: [`0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80`] // Oh no! A hardcoded private key!!
+    }
+  },
+  solidity: "0.8.4",
+};
